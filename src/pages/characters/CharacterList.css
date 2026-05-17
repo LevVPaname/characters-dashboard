@@ -1,0 +1,10 @@
+.CharacterList {
+  padding: 20px 0;
+}
+
+.CharacterList__Image {
+  display: block;
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+}
