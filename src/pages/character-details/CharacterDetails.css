@@ -1,0 +1,10 @@
+.CharacterDetails {
+  padding: 20px 0;
+}
+
+.CharacterDetails__GoBackButton {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}

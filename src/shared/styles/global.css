@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #e5e5e5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}

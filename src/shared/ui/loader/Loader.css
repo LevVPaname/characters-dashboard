@@ -1,0 +1,32 @@
+.Loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Loader__Image {
+  animation: LoaderRotate 6s linear infinite;
+}
+
+.Loader--small .Loader__Image {
+  width: 103px;
+}
+
+.Loader--large .Loader__Image {
+  width: 475px;
+}
+
+.Loader__Label {
+  margin: 0;
+}
+
+@keyframes LoaderRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
