@@ -20,3 +20,15 @@ select,
 textarea {
   font: inherit;
 }
+
+:root {
+  --color-surface: #ffffff;
+  --color-border: #393939;
+  --color-text-secondary: #6b6b6b;
+  --color-hover: #f0f0f0;
+  --color-danger: #da4f4f;
+
+  --radius-s: 6px;
+
+  --transition-fast: 0.2s ease;
+}
