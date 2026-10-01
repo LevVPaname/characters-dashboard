@@ -1,24 +1,36 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+
 import { Link } from 'react-router';
 
 import Image from '../../shared/assets/R_n_M_page_logo.png';
+import StarIcon from '../../shared/assets/star.svg?react';
+import { Input } from '../../shared/ui/controls';
 import { Select } from '../../shared/ui/select/Select';
 
-import './CharacterList.css';
+import styles from './CharacterList.module.css';
 
 export function CharacterList() {
   const [selected, setSelected] = useState<string>();
+  const [inputValue, setInputValue] = useState<string>();
   return (
-    <div className='CharacterList'>
+    <div className={styles.CharacterList}>
       <img
-        className='CharacterList__Image'
+        className={styles.CharacterList__Image}
         src={Image}
         alt=''
       />
       <p>Здесь будет список персонажей.</p>
       <Link to='/characters/1'>Открыть персонажа #1</Link>
 
-      <div style={{ display: 'flex', gap: '20px', marginTop: '20px' }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+          marginTop: '20px',
+          width: '200px'
+        }}
+      >
         <Select
           onChange={setSelected}
           value={selected}
@@ -48,6 +60,23 @@ export function CharacterList() {
               {option.label}
             </span>
           )}
+        />
+
+        <Input
+          icon={<StarIcon />}
+          value={inputValue}
+          onChange={setInputValue}
+        />
+        <Input
+          value={inputValue}
+          onChange={setInputValue}
+          variant='underlined'
+        />
+        <Input
+          className={styles.CharacterList__Input}
+          value={inputValue}
+          onChange={setInputValue}
+          variant='underlined'
         />
       </div>
     </div>
