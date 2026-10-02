@@ -9,7 +9,7 @@ import styles from './CharacterList.module.css';
 
 export function CharacterList() {
   const [selected, setSelected] = useState<string>();
-  const [inputValue, setInputValue] = useState<string>();
+  const [inputValue, setInputValue] = useState('');
   return (
     <div className={styles.CharacterList}>
       <img

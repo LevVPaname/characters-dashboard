@@ -3,7 +3,7 @@
   align-items: center;
   gap: 8px;
 
-  &.outlined {
+  &.bordered {
     padding: 16px;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-m);

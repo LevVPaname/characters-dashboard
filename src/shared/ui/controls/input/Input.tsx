@@ -6,15 +6,15 @@ import { classNames } from '../../../utils';
 import styles from './Input.module.css';
 
 interface InputProps {
-  value: string | undefined;
+  value: string;
   onChange: (value: string) => void;
   placeholder?: string;
-  variant?: 'underlined' | 'outlined';
+  variant?: 'underlined' | 'bordered';
   icon?: React.ReactNode;
   className?: string;
 }
 
-export const Input = ({ variant = 'outlined', ...props }: InputProps) => {
+export const Input = ({ variant = 'bordered', ...props }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
