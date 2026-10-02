@@ -1,8 +1,8 @@
 import { Link } from 'react-router';
 
-import { LogoLightIcon } from '../../shared/assets';
-
 import './Layout_shared.css';
+
+import { LogoLightIcon } from '@/shared/assets';
 
 export function Header() {
   return (

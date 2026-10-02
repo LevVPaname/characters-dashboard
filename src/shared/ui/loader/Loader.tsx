@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { LoadingImage } from '../../assets';
-
 import './Loader.css';
+
+import { LoadingImage } from '@/shared/assets';
 
 type LoaderProps = {
   size: 'small' | 'large';

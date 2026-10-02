@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import { ArrowDownIcon } from '../../assets';
-
 import './Select.css';
+
+import { ArrowDownIcon } from '@/shared/assets';
 
 type Option = {
   label: string;

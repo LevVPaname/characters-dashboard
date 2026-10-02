@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 
-import { CharacterDetails } from '../pages/character-details';
-import { CharacterList } from '../pages/characters';
-import { Layout } from '../widgets/layout';
+import { CharacterDetails } from '@/pages/character-details';
+import { CharacterList } from '@/pages/characters';
+import { Layout } from '@/widgets/layout';
 
 export function AppRouter() {
   return (
