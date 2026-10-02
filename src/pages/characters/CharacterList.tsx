@@ -1,9 +1,7 @@
 import { useState } from 'react';
-
 import { Link } from 'react-router';
 
-import Image from '../../shared/assets/R_n_M_page_logo.png';
-import StarIcon from '../../shared/assets/star.svg?react';
+import { RickAndMortyPageLogo, StarIcon } from '../../shared/assets';
 import { Input } from '../../shared/ui/controls';
 import { Select } from '../../shared/ui/select/Select';
 
@@ -16,7 +14,7 @@ export function CharacterList() {
     <div className={styles.CharacterList}>
       <img
         className={styles.CharacterList__Image}
-        src={Image}
+        src={RickAndMortyPageLogo}
         alt=''
       />
       <p>Здесь будет список персонажей.</p>

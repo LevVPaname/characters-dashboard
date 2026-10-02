@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-import XIcon from '../../../assets/x.svg?react';
+import { XIcon } from '../../../assets';
 import { classNames } from '../../../utils';
 
 import styles from './Input.module.css';

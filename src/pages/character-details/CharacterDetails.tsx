@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from 'react-router';
 
-import ArrowLeftIcon from '../../shared/assets/arrow_left.svg?react';
+import { ArrowLeftIcon } from '../../shared/assets';
 import { Loader } from '../../shared/ui/loader';
 
 import './CharacterDetails.css';
