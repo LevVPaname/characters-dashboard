@@ -1,14 +1,14 @@
 import { Link } from 'react-router';
 
-import LogoIcon from '../../shared/assets/logo_light.svg?react';
-
 import './Layout_shared.css';
+
+import { LogoLightIcon } from '@/shared/assets';
 
 export function Header() {
   return (
     <header className='Layout__Header'>
       <Link to='/'>
-        <LogoIcon />
+        <LogoLightIcon />
       </Link>
 
       <div>

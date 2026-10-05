@@ -1,8 +1,8 @@
 import React from 'react';
 
-import loadingImage from '../../assets/loading.png';
-
 import './Loader.css';
+
+import { LoadingImage } from '@/shared/assets';
 
 type LoaderProps = {
   size: 'small' | 'large';
@@ -17,7 +17,7 @@ export function Loader({
     <div className={`Loader Loader--${size}`}>
       <img
         className='Loader__Image'
-        src={loadingImage}
+        src={LoadingImage}
         alt=''
       />
 

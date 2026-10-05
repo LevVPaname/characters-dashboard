@@ -29,6 +29,7 @@ textarea {
   --color-danger: #da4f4f;
 
   --radius-s: 6px;
+  --radius-m: 8px;
 
   --transition-fast: 0.2s ease;
 }
