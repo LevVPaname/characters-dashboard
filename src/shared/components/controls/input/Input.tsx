@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 
-import styles from './Input.module.css';
+import styles from './Input.module.scss';
 
-import { XIcon } from '@/shared/assets';
-import { classNames } from '@/shared/utils';
+import { XIcon } from '@/assets';
+import { classNames } from '@/shared/helpers';
 
 interface InputProps {
   value: string;

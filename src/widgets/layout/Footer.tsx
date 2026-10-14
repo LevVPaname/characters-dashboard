@@ -1,8 +1,8 @@
-import './Layout_shared.css';
+import styles from './Footer.module.scss';
 
 export function Footer() {
   return (
-    <footer className='Footer'>
+    <footer className={styles.Footer}>
       <p>Made with love by levVPaname</p>
     </footer>
   );

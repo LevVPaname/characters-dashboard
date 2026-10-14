@@ -3,14 +3,14 @@ import { Outlet } from 'react-router';
 import { Footer } from './Footer';
 import { Header } from './Header';
 
-import './Layout_shared.css';
+import styles from './Layout.module.scss';
 
 export function Layout() {
   return (
-    <div className='Layout'>
+    <div className={styles.Layout}>
       <Header />
 
-      <main className='Layout__Content'>
+      <main className={styles.Content}>
         <Outlet />
       </main>
 

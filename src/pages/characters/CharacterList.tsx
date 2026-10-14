@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 
-import styles from './CharacterList.module.css';
+import styles from './CharacterList.module.scss';
 
-import { RickAndMortyPageLogo, StarIcon } from '@/shared/assets';
-import { Input } from '@/shared/ui/controls';
-import { Select } from '@/shared/ui/select/Select';
+import { RickAndMortyPageLogo, StarIcon } from '@/assets';
+import { Input } from '@/shared/components/controls';
+import { Select } from '@/shared/components/select/Select';
 
 export function CharacterList() {
   const [selected, setSelected] = useState<string>();
