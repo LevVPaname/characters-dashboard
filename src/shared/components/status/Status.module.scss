@@ -1,0 +1,25 @@
+.Status {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.Indicator {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--color-text-secondary);
+  border-radius: 50%;
+}
+
+.Indicator--Alive {
+  background: var(--color-status-alive);
+}
+
+.Indicator--Dead {
+  background: var(--color-status-dead);
+}
+
+.Indicator--unknown {
+  background: var(--color-status-unknown);
+}
