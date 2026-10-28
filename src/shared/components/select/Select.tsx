@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import './Select.css';
+import styles from './Select.module.scss';
 
-import { ArrowDownIcon } from '@/shared/assets';
+import { ArrowDownIcon } from '@/assets';
+import { classNames } from '@/shared/helpers';
 
 type Option = {
   label: string;
@@ -26,8 +27,8 @@ function SelectOptionContent({
   getOptionCustom?: (option: Option) => React.ReactNode;
 }) {
   return (
-    <span className='Select__OptionContent'>
-      <span className='Select__OptionLabel'>{option.label}</span>
+    <span className={styles.Select__OptionContent}>
+      <span className={styles.Select__OptionLabel}>{option.label}</span>
       {getOptionCustom?.(option)}
     </span>
   );
@@ -74,13 +75,13 @@ function Select({
 
   return (
     <div
-      className={`Select Select--${size}`}
+      className={classNames(styles.Select, styles[`Select--${size}`])}
       ref={selectRef}
     >
       <div
         role='button'
         tabIndex={0}
-        className='Select__Trigger'
+        className={styles.Select__Trigger}
         onClick={() => setIsOpen((prev) => !prev)}
       >
         {selectedOption ? (
@@ -92,10 +93,10 @@ function Select({
           placeholder
         )}
 
-        <div className='Select__Actions'>
+        <div className={styles.Select__Actions}>
           {selectedOption && (
             <button
-              className='Select__ResetButton'
+              className={styles.Select__ResetButton}
               type='button'
               onClick={handleReset}
               aria-label='clear value'
@@ -104,21 +105,24 @@ function Select({
             </button>
           )}
           <ArrowDownIcon
-            className={`Select__Arrow ${isOpen ? 'Select__Arrow--open' : ''}`}
+            className={classNames(
+              styles.Select__Arrow,
+              isOpen && styles['Select__Arrow--open']
+            )}
           />
         </div>
       </div>
 
       {isOpen && (
-        <ul className='Select__Options'>
+        <ul className={styles.Select__Options}>
           {options.map((option) => (
             <li
               key={option.value}
-              className='Select__Option'
+              className={styles.Select__Option}
             >
               <button
                 type='button'
-                className='Select__OptionButton'
+                className={styles.Select__OptionButton}
                 onClick={() => handleSelect(option.value)}
               >
                 <SelectOptionContent

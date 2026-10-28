@@ -26,32 +26,32 @@
 .Select__OptionButton,
 .Select__ResetButton {
   padding: 0;
-  border: none;
-  background: none;
   font: inherit;
   color: inherit;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .Select__Trigger {
-  width: 100%;
-  height: var(--select-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  height: var(--select-height);
   padding: 0 var(--select-padding-x);
+  font-size: var(--select-font-size);
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-s);
-  background: var(--color-surface);
-  color: var(--color-text-secondary);
-  font-size: var(--select-font-size);
 }
 
 .Select__OptionContent {
-  min-width: 0;
   display: flex;
-  align-items: center;
   gap: 5px;
+  align-items: center;
+  min-width: 0;
 }
 
 .Select__OptionLabel {
@@ -62,33 +62,33 @@
 
 .Select__Actions {
   display: flex;
-  align-items: center;
   flex-shrink: 0;
   gap: var(--select-actions-gap);
+  align-items: center;
 }
 
 .Select__ResetButton {
-  width: var(--select-reset-size);
-  height: var(--select-reset-size);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-s);
-  color: var(--color-text-secondary);
+  width: var(--select-reset-size);
+  height: var(--select-reset-size);
   font-size: var(--select-reset-font-size);
   line-height: 1;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
 }
 
 .Select__ResetButton:hover {
-  background: var(--color-hover);
   color: var(--color-danger);
+  background: var(--color-hover);
 }
 
 .Select__Arrow {
+  flex-shrink: 0;
   width: var(--select-arrow-size);
   height: var(--select-arrow-size);
-  flex-shrink: 0;
   transition: transform var(--transition-fast);
 }
 
@@ -98,29 +98,29 @@
 
 .Select__Options {
   position: absolute;
-  z-index: 10;
   top: calc(100% + 8px);
-  left: 0;
   right: 0;
-  margin: 0;
+  left: 0;
+  z-index: 10;
   padding: 0;
+  margin: 0;
+  overflow: hidden;
   list-style: none;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-s);
-  background: var(--color-surface);
-  overflow: hidden;
 }
 
 .Select__OptionButton {
+  display: flex;
+  gap: 5px;
+  align-items: center;
   width: 100%;
   height: var(--select-height);
-  display: flex;
-  align-items: center;
-  gap: 5px;
   padding: 0 var(--select-padding-x);
-  text-align: left;
-  color: var(--color-text-secondary);
   font-size: var(--select-font-size);
+  color: var(--color-text-secondary);
+  text-align: left;
 }
 
 .Select__OptionButton:hover {

@@ -1,19 +1,19 @@
 import { useNavigate, useParams } from 'react-router';
 
-import './CharacterDetails.css';
+import styles from './CharacterDetails.module.scss';
 
-import { ArrowLeftIcon } from '@/shared/assets';
-import { Loader } from '@/shared/ui/loader';
+import { ArrowLeftIcon } from '@/assets';
+import { Loader } from '@/shared/components/loader';
 
 export function CharacterDetails() {
   const navigate = useNavigate();
   const { characterId } = useParams();
 
   return (
-    <div className='CharacterDetails'>
+    <div className={styles.CharacterDetails}>
       <button
         type='button'
-        className='CharacterDetails__GoBackButton'
+        className={styles.CharacterDetails__GoBackButton}
         onClick={() => navigate(-1)}
       >
         <ArrowLeftIcon />

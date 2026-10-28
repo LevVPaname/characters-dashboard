@@ -1,3 +1,5 @@
+@import 'normalize.css';
+
 * {
   box-sizing: border-box;
 }
@@ -9,7 +11,6 @@ body,
 }
 
 body {
-  margin: 0;
   font-family: system-ui, sans-serif;
   background: #e5e5e5;
 }
@@ -22,14 +23,15 @@ textarea {
 }
 
 :root {
-  --color-surface: #ffffff;
+  --color-surface: #fff;
   --color-border: #393939;
   --color-text-secondary: #6b6b6b;
   --color-hover: #f0f0f0;
   --color-danger: #da4f4f;
-
+  --color-status-alive: #12b800;
+  --color-status-dead: #da4f4f;
+  --color-status-unknown: #f5a623;
   --radius-s: 6px;
   --radius-m: 8px;
-
   --transition-fast: 0.2s ease;
 }

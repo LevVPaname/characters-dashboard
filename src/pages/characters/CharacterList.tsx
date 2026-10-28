@@ -1,11 +1,28 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 
-import styles from './CharacterList.module.css';
+import styles from './CharacterList.module.scss';
 
-import { RickAndMortyPageLogo, StarIcon } from '@/shared/assets';
-import { Input } from '@/shared/ui/controls';
-import { Select } from '@/shared/ui/select/Select';
+import { RickAndMortyPageLogo, StarIcon } from '@/assets';
+import { Input } from '@/shared/components/controls';
+import { Select } from '@/shared/components/select/Select';
+import type { Character } from '@/shared/types';
+import { CharacterCard } from '@/widgets/character-card';
+
+const mockCharacter: Character = {
+  id: 1,
+  name: 'Rick Sanchez',
+  status: 'Alive',
+  species: 'Human',
+  type: '',
+  gender: 'Male',
+  origin: { name: 'Earth (C-137)', url: '' },
+  location: { name: 'Earth', url: '' },
+  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+  episode: [],
+  url: '',
+  created: ''
+};
 
 export function CharacterList() {
   const [selected, setSelected] = useState<string>();
@@ -19,6 +36,10 @@ export function CharacterList() {
       />
       <p>Здесь будет список персонажей.</p>
       <Link to='/characters/1'>Открыть персонажа #1</Link>
+
+      <div className={styles.CharacterList__Card}>
+        <CharacterCard character={mockCharacter} />
+      </div>
 
       <div
         style={{
