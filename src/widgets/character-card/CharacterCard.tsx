@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 import styles from './CharacterCard.module.scss';
 
-import { EditIcon, XIcon } from '@/assets';
-import { Status } from '@/shared/components/status';
+import { EditIcon, XIcon } from '@/shared/assets';
+import { Status } from '@/shared/components';
 import type { Character } from '@/shared/types';
 
 export type CharacterCardMode = 'view' | 'edit';

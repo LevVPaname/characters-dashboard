@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 
 import styles from './Header.module.scss';
 
-import { LogoLightIcon } from '@/assets';
+import { LogoLightIcon } from '@/shared/assets';
 
 export function Header() {
   return (

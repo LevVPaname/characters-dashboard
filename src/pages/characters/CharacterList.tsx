@@ -3,9 +3,8 @@ import { Link } from 'react-router';
 
 import styles from './CharacterList.module.scss';
 
-import { RickAndMortyPageLogo, StarIcon } from '@/assets';
-import { Input } from '@/shared/components/controls';
-import { Select } from '@/shared/components/select/Select';
+import { RickAndMortyPageLogo, StarIcon } from '@/shared/assets';
+import { Input, Select } from '@/shared/components';
 import type { Character } from '@/shared/types';
 import { CharacterCard } from '@/widgets/character-card';
 

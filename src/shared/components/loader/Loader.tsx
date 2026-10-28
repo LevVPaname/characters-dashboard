@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Loader.module.scss';
 
-import { LoadingImage } from '@/assets';
+import { LoadingImage } from '@/shared/assets';
 import { classNames } from '@/shared/helpers';
 
 type LoaderProps = {

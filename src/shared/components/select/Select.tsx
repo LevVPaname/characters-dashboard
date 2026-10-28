@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './Select.module.scss';
 
-import { ArrowDownIcon } from '@/assets';
+import { ArrowDownIcon } from '@/shared/assets';
 import { classNames } from '@/shared/helpers';
 
 type Option = {
@@ -34,7 +34,7 @@ function SelectOptionContent({
   );
 }
 
-function Select({
+export function Select({
   options,
   value = undefined,
   placeholder = 'Select',
@@ -137,5 +137,3 @@ function Select({
     </div>
   );
 }
-
-export { Select };

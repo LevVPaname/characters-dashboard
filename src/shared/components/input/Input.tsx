@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import styles from './Input.module.scss';
 
-import { XIcon } from '@/assets';
+import { XIcon } from '@/shared/assets';
 import { classNames } from '@/shared/helpers';
 
 interface InputProps {
