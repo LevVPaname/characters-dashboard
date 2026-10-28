@@ -1,0 +1,16 @@
+.FiltersPanel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  width: 100%;
+}
+
+.FiltersPanel > * {
+  min-width: 0;
+}
+
+@media (width <= 560px) {
+  .FiltersPanel {
+    grid-template-columns: 1fr;
+  }
+}

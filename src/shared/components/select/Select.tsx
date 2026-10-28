@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './Select.module.scss';
 
-import { ArrowDownIcon } from '@/shared/assets';
+import { ArrowDownIcon, XIcon } from '@/shared/assets';
 import { classNames } from '@/shared/helpers';
 
 type Option = {
@@ -101,7 +101,7 @@ export function Select({
               onClick={handleReset}
               aria-label='clear value'
             >
-              ×
+              <XIcon className={styles.Select__ResetIcon} />
             </button>
           )}
           <ArrowDownIcon
