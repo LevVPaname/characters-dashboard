@@ -1,11 +1,19 @@
+@use '@/shared/styles/typography' as typ;
+
 .Card {
-  position: relative;
+  --card-padding: 8px;
+  --card-gap: 16px;
+  --header-height: 31px;
+  --row-height: 43px;
+  --actions-gap: 12px;
+
   display: flex;
-  gap: 16px;
+  gap: var(--card-gap);
   max-width: 540px;
-  padding: 8px;
+  min-height: 262px;
+  padding: var(--card-padding);
   background: var(--color-surface);
-  border: 1px solid #e6e6e6;
+  border: 1px solid var(--color-border-soft);
   border-radius: 16px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
 }
@@ -25,20 +33,38 @@
   min-width: 0;
 }
 
-.Name {
+.Header {
+  display: flex;
+  gap: var(--actions-gap);
+  align-items: flex-start;
+  min-height: var(--header-height);
   margin-bottom: 12px;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.1;
-  color: #111;
+}
+
+.Header > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.Name {
+  @include typ.typ-title;
+
+  flex: 1 1 auto;
+  color: var(--color-text-primary);
   overflow-wrap: anywhere;
+}
+
+.Actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin-left: auto;
 }
 
 .Info {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 0;
 }
 
 .Row {
@@ -46,28 +72,28 @@
   flex-direction: column;
   gap: 2px;
   min-width: 0;
+  min-height: var(--row-height);
+}
+
+.Row > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .Term {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #111;
+  @include typ.typ-label;
+
+  color: var(--color-text-primary);
 }
 
 .Description {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.3;
+  @include typ.typ-body;
+
   color: var(--color-text-secondary);
   overflow-wrap: anywhere;
 }
 
-.EditButton,
-.CancelButton {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+.IconButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,35 +108,47 @@
   transition:
     color var(--transition-fast),
     opacity var(--transition-fast);
-}
 
-@media (hover: hover) {
-  .EditButton {
-    opacity: 0;
+  &:hover {
+    color: var(--color-text-primary);
   }
 
-  .Card:hover .EditButton,
-  .Card:focus-within .EditButton,
-  .EditButton:focus-visible {
-    opacity: 1;
+  &:focus-visible {
+    outline: 2px solid var(--color-border);
+    outline-offset: 2px;
   }
 }
 
-.EditButton:hover,
-.CancelButton:hover {
-  color: #111;
+.IconButton--ghost {
+  @media (hover: hover) {
+    .Card & {
+      opacity: 0;
+    }
+
+    .Card:hover &,
+    .Card:focus-within &,
+    &:focus-visible {
+      opacity: 1;
+    }
+  }
 }
 
-.EditButton:focus-visible,
-.CancelButton:focus-visible {
-  outline: 2px solid var(--color-border);
-  outline-offset: 2px;
+.IconButton--strong {
+  color: var(--color-text-primary);
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
-.EditPlaceholder {
-  margin: 0;
-  font-size: 16px;
-  color: var(--color-text-secondary);
+.Header > div,
+.Row > div {
+  align-self: flex-start;
+}
+
+.StatusSelect {
+  width: 140px;
+  max-width: 100%;
 }
 
 @media (width <= 560px) {
