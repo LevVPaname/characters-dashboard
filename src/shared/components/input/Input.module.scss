@@ -1,33 +1,37 @@
+@use '@/shared/styles/typography' as typ;
+
 .Root {
+  --input-icon-size: 20px;
+
   display: flex;
   gap: 8px;
   align-items: center;
 
   &.bordered {
+    @include typ.typ-field;
+
     padding: 16px;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0%;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-m);
   }
 
   &.underlined {
-    font-family: Roboto, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 30px;
-    vertical-align: middle;
-    letter-spacing: 0.15px;
+    @include typ.typ-title;
+
     border-bottom: 1px solid var(--color-border);
+  }
+
+  &.underlined.Small {
+    @include typ.typ-body;
+
+    --input-icon-size: 14px;
   }
 }
 
 .Input {
   flex: 1;
   min-width: 0;
+  padding: 0;
   outline: none;
   background: transparent;
   border: none;
@@ -44,6 +48,8 @@
 
 .ClearButton {
   flex-shrink: 0;
+  width: var(--input-icon-size);
+  height: var(--input-icon-size);
   cursor: pointer;
   transition: color var(--transition-fast);
 

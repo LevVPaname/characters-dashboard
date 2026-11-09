@@ -1,7 +1,8 @@
+@use '@/shared/styles/typography' as typ;
+
 .Select {
   --select-height: 55px;
   --select-padding-x: 14px;
-  --select-font-size: 16px;
   --select-arrow-size: 24px;
   --select-reset-size: 20px;
   --select-actions-gap: 12px;
@@ -14,7 +15,6 @@
 .Select--small {
   --select-height: 21px;
   --select-padding-x: 5px;
-  --select-font-size: 14px;
   --select-arrow-size: 9px;
   --select-reset-size: 14px;
   --select-actions-gap: 8px;
@@ -38,7 +38,6 @@
   width: 100%;
   height: var(--select-height);
   padding: 0 var(--select-padding-x);
-  font-size: var(--select-font-size);
   color: var(--color-text-secondary);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -83,6 +82,16 @@
   color: var(--color-danger);
 }
 
+.Select--large .Select__Trigger,
+.Select--large .Select__OptionButton {
+  @include typ.typ-field;
+}
+
+.Select--small .Select__Trigger,
+.Select--small .Select__OptionButton {
+  @include typ.typ-body;
+}
+
 .Select__Arrow {
   flex-shrink: 0;
   width: var(--select-arrow-size);
@@ -116,7 +125,6 @@
   width: 100%;
   height: var(--select-height);
   padding: 0 var(--select-padding-x);
-  font-size: var(--select-font-size);
   color: var(--color-text-secondary);
   text-align: left;
 }

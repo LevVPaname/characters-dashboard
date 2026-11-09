@@ -17,6 +17,7 @@ interface SelectProps {
   onChange: (value: string) => void;
   size?: 'large' | 'small';
   getOptionCustom?: (option: Option) => React.ReactNode;
+  className?: string;
 }
 
 function SelectOptionContent({
@@ -40,7 +41,8 @@ export function Select({
   placeholder = 'Select',
   size = 'large',
   onChange,
-  getOptionCustom
+  getOptionCustom,
+  className
 }: SelectProps): React.JSX.Element {
   const selectRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +77,11 @@ export function Select({
 
   return (
     <div
-      className={classNames(styles.Select, styles[`Select--${size}`])}
+      className={classNames(
+        styles.Select,
+        styles[`Select--${size}`],
+        className
+      )}
       ref={selectRef}
     >
       <div
