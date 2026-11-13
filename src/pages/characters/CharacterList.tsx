@@ -3,11 +3,15 @@ import { Link } from 'react-router';
 
 import styles from './CharacterList.module.scss';
 
-import { RickAndMortyPageLogo, StarIcon } from '@/assets';
-import { Input } from '@/shared/components/controls';
-import { Select } from '@/shared/components/select/Select';
+import { RickAndMortyPageLogo, StarIcon } from '@/shared/assets';
+import { Input, Select } from '@/shared/components';
 import type { Character } from '@/shared/types';
 import { CharacterCard } from '@/widgets/character-card';
+import {
+  type CharacterFilters,
+  EMPTY_FILTERS,
+  FiltersPanel
+} from '@/widgets/filters-panel';
 
 const mockCharacter: Character = {
   id: 1,
@@ -27,6 +31,8 @@ const mockCharacter: Character = {
 export function CharacterList() {
   const [selected, setSelected] = useState<string>();
   const [inputValue, setInputValue] = useState('');
+  const [value, setValue] = useState<CharacterFilters>(EMPTY_FILTERS);
+
   return (
     <div className={styles.CharacterList}>
       <img
@@ -36,6 +42,11 @@ export function CharacterList() {
       />
       <p>Здесь будет список персонажей.</p>
       <Link to='/characters/1'>Открыть персонажа #1</Link>
+
+      <FiltersPanel
+        value={value}
+        onChange={setValue}
+      />
 
       <div className={styles.CharacterList__Card}>
         <CharacterCard character={mockCharacter} />

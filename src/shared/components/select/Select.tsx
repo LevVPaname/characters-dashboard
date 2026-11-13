@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './Select.module.scss';
 
-import { ArrowDownIcon } from '@/assets';
+import { ArrowDownIcon, XIcon } from '@/shared/assets';
 import { classNames } from '@/shared/helpers';
 
 type Option = {
@@ -17,6 +17,7 @@ interface SelectProps {
   onChange: (value: string) => void;
   size?: 'large' | 'small';
   getOptionCustom?: (option: Option) => React.ReactNode;
+  className?: string;
 }
 
 function SelectOptionContent({
@@ -34,13 +35,14 @@ function SelectOptionContent({
   );
 }
 
-function Select({
+export function Select({
   options,
   value = undefined,
   placeholder = 'Select',
   size = 'large',
   onChange,
-  getOptionCustom
+  getOptionCustom,
+  className
 }: SelectProps): React.JSX.Element {
   const selectRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +77,11 @@ function Select({
 
   return (
     <div
-      className={classNames(styles.Select, styles[`Select--${size}`])}
+      className={classNames(
+        styles.Select,
+        styles[`Select--${size}`],
+        className
+      )}
       ref={selectRef}
     >
       <div
@@ -101,7 +107,7 @@ function Select({
               onClick={handleReset}
               aria-label='clear value'
             >
-              ×
+              <XIcon className={styles.Select__ResetIcon} />
             </button>
           )}
           <ArrowDownIcon
@@ -137,5 +143,3 @@ function Select({
     </div>
   );
 }
-
-export { Select };

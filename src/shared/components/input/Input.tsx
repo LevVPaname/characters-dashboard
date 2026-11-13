@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import styles from './Input.module.scss';
 
-import { XIcon } from '@/assets';
+import { XIcon } from '@/shared/assets';
 import { classNames } from '@/shared/helpers';
 
 interface InputProps {
@@ -10,11 +10,16 @@ interface InputProps {
   onChange: (value: string) => void;
   placeholder?: string;
   variant?: 'underlined' | 'bordered';
+  size?: 'large' | 'small';
   icon?: React.ReactNode;
   className?: string;
 }
 
-export const Input = ({ variant = 'bordered', ...props }: InputProps) => {
+export const Input = ({
+  variant = 'bordered',
+  size = 'large',
+  ...props
+}: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
@@ -23,6 +28,7 @@ export const Input = ({ variant = 'bordered', ...props }: InputProps) => {
       className={classNames(
         styles.Root,
         styles[variant],
+        size === 'small' && styles.Small,
         props.className
       )}
     >

@@ -1,10 +1,10 @@
+@use '@/shared/styles/typography' as typ;
+
 .Select {
   --select-height: 55px;
   --select-padding-x: 14px;
-  --select-font-size: 16px;
   --select-arrow-size: 24px;
-  --select-reset-size: 32px;
-  --select-reset-font-size: 16px;
+  --select-reset-size: 20px;
   --select-actions-gap: 12px;
 
   position: relative;
@@ -15,10 +15,8 @@
 .Select--small {
   --select-height: 21px;
   --select-padding-x: 5px;
-  --select-font-size: 14px;
   --select-arrow-size: 9px;
-  --select-reset-size: 15px;
-  --select-reset-font-size: 10px;
+  --select-reset-size: 14px;
   --select-actions-gap: 8px;
 }
 
@@ -40,7 +38,6 @@
   width: 100%;
   height: var(--select-height);
   padding: 0 var(--select-padding-x);
-  font-size: var(--select-font-size);
   color: var(--color-text-secondary);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -69,20 +66,30 @@
 
 .Select__ResetButton {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: var(--select-reset-size);
-  height: var(--select-reset-size);
-  font-size: var(--select-reset-font-size);
-  line-height: 1;
-  color: var(--color-text-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-s);
+  color: inherit;
+  transition: color var(--transition-fast);
 }
 
-.Select__ResetButton:hover {
+.Select__ResetIcon {
+  width: var(--select-reset-size);
+  height: var(--select-reset-size);
+}
+
+.Select__ResetButton:hover .Select__ResetIcon {
   color: var(--color-danger);
-  background: var(--color-hover);
+}
+
+.Select--large .Select__Trigger,
+.Select--large .Select__OptionButton {
+  @include typ.typ-field;
+}
+
+.Select--small .Select__Trigger,
+.Select--small .Select__OptionButton {
+  @include typ.typ-body;
 }
 
 .Select__Arrow {
@@ -118,7 +125,6 @@
   width: 100%;
   height: var(--select-height);
   padding: 0 var(--select-padding-x);
-  font-size: var(--select-font-size);
   color: var(--color-text-secondary);
   text-align: left;
 }

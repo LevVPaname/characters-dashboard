@@ -2,8 +2,8 @@ import { useNavigate, useParams } from 'react-router';
 
 import styles from './CharacterDetails.module.scss';
 
-import { ArrowLeftIcon } from '@/assets';
-import { Loader } from '@/shared/components/loader';
+import { ArrowLeftIcon } from '@/shared/assets';
+import { Loader } from '@/shared/components';
 
 export function CharacterDetails() {
   const navigate = useNavigate();
